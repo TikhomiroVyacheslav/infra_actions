@@ -69,6 +69,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
+          sudo docker login -u tikhomirovyacheslav
+          12367845asd
           sudo docker pull tikhomirovyacheslav/infra_actions
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 tikhomirovyacheslav/infra-actions
